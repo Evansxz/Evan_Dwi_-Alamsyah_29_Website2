@@ -1,5 +1,5 @@
 :root {
-    --primary: #FBF3D5;
+    --primary: #F9CB99;
     --primary2: #F5C9B0;
     --bg: #F9F6F3;
     --nav-bg: #D6A99D;
@@ -22,7 +22,7 @@ html {
 body {
     font-family: 'poppins', sans-serif;
     background-color: antiquewhite;
-    color: #fff;
+    color: var(--primary2);
 }
 
 .navbar {
@@ -30,7 +30,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.4rem 7%;
-    background-color: black;
+    background-color:var(--bg);
+    border-bottom: var(--border);
     position: fixed;
     top: 0;
     left: 0;
@@ -41,19 +42,24 @@ body {
 .navbar .navbar-logo {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--primary2);
     font-size: italic;
 }
 
 .navbar .navbar-logo span {
-    color: var(--primary2) ;
+    color: var(--primary);
+    font-weight: 500;
 }
 
 .navbar .navbar-nav a {
     color: var(--primary);
-    display: inline-block;
+    display: inline-block ;
     font-size: 1.3rem;
     margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary2);
 }
 
 .navbar .navbar-nav a::after {
@@ -62,20 +68,90 @@ body {
     padding-bottom: 0.5rem;
     border-bottom: 0.1rem solid var(--border);
     transform: scaleX(0);
-    transition: 0.5 linear;
+    transition: 0.2s linear;
 }
 
 .navbar .navbar-nav a:hover::after {
     transform: scaleX(0.5);
 }
 
+.navbar .navbar-extra a {
+    color: var(--primary);
+    margin: 0 0.5rem;
+}
+
 .navbar .navbar-extra a:hover {
     color: var(--primary2);
 }
 
-#hamburger-menu {
-    display: none;
-}
 
+/* Media Queries */
+/* Laptop */
+/* @media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+} */
+/* Tablet */
+/* @media (max-width: 868px) {
+  html {
+    font-size: 62.5%;
+  }
 
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    width: 20rem;
+    height: 33vh;
+    transition: 0.3s;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.277);
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: aliceblue;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,  0,  0,  0.15);
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--text);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0, 0;
+    margin-right: 10px;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.7);
+  }
+
+} */
+/* Mobile Phone */
+/* @media (max-width: 665px) {
+  html {
+    font-size: 55%;
+  }
+
+  .location .row .map {
+    height: 30rem;
+    width: 45rem;
+  }
+} */
 
